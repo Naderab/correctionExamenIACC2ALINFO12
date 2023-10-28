@@ -1,0 +1,21 @@
+<form>
+    <label>Matricule :</label>
+    <input type="text" name="matricule" [(ngModel)]="dep.matricule" minlength="3" maxlength="7" pattern="[A-Za-z]*" #matricule="ngModel">
+
+<div *ngIf="matricule.invalid && matricule.touched">
+    <div *ngIf="matricule.errors!['minlength']">Matricule must have at least 3 characters!</div>
+    <div *ngIf="matricule.errors!['maxlength']">Matricule must be less then 7 characters!</div>
+    <div *ngIf="matricule.errors!['pattern']">Matricule must be alphabetiques!</div>
+</div>
+    <label>Domaine :</label>
+<input type="text" name="domaine" [(ngModel)]="dep.domaine" pattern="(informatique|RH|finance)" #domaine="ngModel">
+<div *ngIf="domaine.invalid && domaine.touched">
+    Domaine invalid !
+</div>
+
+<label>Nb employee</label>
+<input type="number" name="nbemployee" [(ngModel)]="dep.nb_employer">
+<label>Max Salaire</label>
+<input type="number" name="maxsalaire" [(ngModel)]="dep.max_salaire">
+<input type="submit" value="ADD">
+</form>
