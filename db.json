@@ -1,3 +1,18 @@
 {
-  "departements" :[]
+  "departements": [
+    {
+      "matricule": "dep",
+      "domaine": "RH",
+      "nb_employer": 120,
+      "max_salaire": 800,
+      "id": 1
+    },
+    {
+      "matricule": "dep",
+      "domaine": "RH",
+      "nb_employer": 120,
+      "max_salaire": 3000,
+      "id": 2
+    }
+  ]
 }

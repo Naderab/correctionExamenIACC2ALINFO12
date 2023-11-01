@@ -1,1 +1,21 @@
-<p>list-dep works!</p>
+<form (ngSubmit)="searchBySalaire()">
+<input type="number" name="search" [(ngModel)]="searchText">
+<input type="submit" value="Search">
+</form>
+<table>
+<tr *ngFor="let d of list">
+    <td>{{d.matricule}}</td>
+    <td>{{d.domaine}}</td>
+    <td>{{d.nb_employer}}</td>
+    <td>{{d.max_salaire}}</td>
+    <td><button (click)="showForm(d)">Update salaire</button></td>
+</tr>
+</table>
+
+<form [hidden]="hide" (ngSubmit)="updateDep()">
+    <input type="number" name="new" [(ngModel)]="newSalaire">
+    <input type="Submit" value="Update">
+</form>
+
+<button (click)="calculNbEmploye()">Calcul</button>
+{{count}}
